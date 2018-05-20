@@ -1,0 +1,29 @@
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[alias]
+	st = status
+	br = branch
+	co = checkout
+    ec = !git commit --allow-empty -m \"Make PR\"
+    mkpr = !"f() { git checkout -b $1; git ec; git push -u origin $1; hub pull-request; }; f"
+[color]
+	branch = auto
+	diff = auto
+	grep = auto
+	interactive = auto
+	status = auto
+	ui = auto
+[core]
+	whitespace = cr-at-eol
+	#pager = nkf -w | LESSCHARSET=utf-8 less
+	pager = less
+    editor = vim
+[pager]
+   log = diff-highlight | less
+   show = diff-highlight | less
+   diff = diff-highlight | less
+[ghq]
+    root = ~/.ghq
+    root = ~/go
+[hub]
+	protocol = https
